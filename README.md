@@ -4,6 +4,11 @@
 
 This repository contains code samples used for the Code Differently interview preparation series.
 
+### Prerequisites
+
+- Java 15+
+- Maven
+
 ### Files to explore
 
 | Name                                                                                         | Description                                                 |
