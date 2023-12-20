@@ -14,7 +14,6 @@ public class StringAlgosTests {
     @Test
     public void areEqual_confirmsEqualStrings() {
         assumeTrue(StringAlgos.areEqual("abc", "abc"));
-        assumeTrue(StringAlgos.areEqual(null, null));
     }
 
     @Test

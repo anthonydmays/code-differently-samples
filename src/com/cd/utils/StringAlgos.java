@@ -11,16 +11,15 @@ public class StringAlgos {
      * @return
      */
     public static boolean areEqual(String first, String second) {
-        // If either string is null and the other one isn't, then we know they aren't equal. Return
-        // false. (Tip: The `^` operator is XOR. Read about it at
-        // https://www.baeldung.com/java-xor-operator)
-        if (first == null ^ second == null) {
-            return false;
-        }
-
         // If both strings are null, then we consider them to be equal.
         if (first == null && second == null) {
             return true;
+        }
+
+        // We know that both strings aren't null, but ONE of them could be. If so, then we know
+        // they aren't equal.
+        if (first == null || second == null) {
+            return false;
         }
 
         // We now know that both strings aren't null. But if their length doesn't match, then we
