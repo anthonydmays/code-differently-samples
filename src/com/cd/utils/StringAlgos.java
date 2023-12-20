@@ -141,7 +141,7 @@ public class StringAlgos {
      * swap4 = "yltn DiffereedoC"; // swap index 3 and 12
      * swap5 = "yltneDiffer edoC"; // swap index 4 and 13
      * ...
-     * swap8 = "yltnereffiD edoC"; // swap index 7 and 8
+     * swap8 = "yltnereffiD edoC"; // swap index 7 and 8 (done!)
      * </pre>
      * 
      * @param input
