@@ -1,14 +1,13 @@
-package test.com.cd.utils;
+package com.cd.utils;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assumptions.assumeFalse;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import java.util.Arrays;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertThrows;
-import static org.junit.jupiter.api.Assumptions.assumeFalse;
-import org.junit.Test;
-import com.cd.utils.StringAlgos;
+import org.junit.jupiter.api.Test;
 
 public class StringAlgosTests {
     @Test
@@ -63,8 +62,8 @@ public class StringAlgosTests {
 
     @Test
     public void shuffleString_throwsOnNull() {
-        assertThrows("Excepted shuffleString to throw.", NullPointerException.class,
-                () -> StringAlgos.shuffleString(null));
+        assertThrows(NullPointerException.class, () -> StringAlgos.shuffleString(null),
+                "Excepted shuffleString to throw.");
     }
 
     @Test
@@ -74,8 +73,8 @@ public class StringAlgosTests {
 
     @Test
     public void reverseString_throwsOnNull() {
-        assertThrows("Excepted reverseString to throw.", NullPointerException.class,
-                () -> StringAlgos.reverseString(null));
+        assertThrows(NullPointerException.class, () -> StringAlgos.reverseString(null),
+                "Excepted reverseString to throw.");
     }
 
     @Test
@@ -107,7 +106,7 @@ public class StringAlgosTests {
 
     @Test
     public void indexOf_throwsOnNullInput() {
-        assertThrows("Excepted shuffleString to throw.", NullPointerException.class,
-                () -> StringAlgos.indexOf(null, "test"));
+        assertThrows(NullPointerException.class, () -> StringAlgos.indexOf(null, "test"),
+                "Excepted indexOf to throw.");
     }
 }
