@@ -55,11 +55,12 @@ public class StringAlgos {
      * 
      * @param input The input string to test.
      * @return True if the input string contains unique characters, and false otherwise.
+     * @throws NullPointerException
      */
-    public static Boolean containsUniqueCharacters(String input) throws IllegalArgumentException {
+    public static Boolean containsUniqueCharacters(String input) throws NullPointerException {
         // If the input is null, then throw an error.
         if (input == null) {
-            throw new IllegalArgumentException("Input cannot be null.");
+            throw new NullPointerException("Input cannot be null.");
         }
 
         // We want to use a set to keep track of characters we've already seen. A set can only
@@ -101,11 +102,12 @@ public class StringAlgos {
      * 
      * @param input The string to shuffle.
      * @return The shuffled string.
+     * @throws NullPointerException
      */
-    public static String shuffleString(String input) throws IllegalArgumentException {
+    public static String shuffleString(String input) throws NullPointerException {
         // Check yoself before you wreck yoself.
         if (input == null) {
-            throw new IllegalArgumentException("Input cannot be null.");
+            throw new NullPointerException("Input cannot be null.");
         }
 
         // Strings are immutable. Let's convert to a char array so we can move characters around.
@@ -146,12 +148,12 @@ public class StringAlgos {
      * 
      * @param input
      * @return
-     * @throws IllegalArgumentException
+     * @throws NullPointerException
      */
-    public static String reverseString(String input) throws IllegalArgumentException {
+    public static String reverseString(String input) throws NullPointerException {
         // Check yoself before you wreck yoself.
         if (input == null) {
-            throw new IllegalArgumentException("Input cannot be null.");
+            throw new NullPointerException("Input cannot be null.");
         }
 
         // Strings are immutable. Let's convert to a char array so we can move characters around.
@@ -243,6 +245,65 @@ public class StringAlgos {
         Character temp = charArray[i];
         charArray[i] = charArray[j];
         charArray[j] = temp;
+    }
+
+    /**
+     * Returns the first matching index of the second provided string in the first provided string.
+     * 
+     * @param input
+     * @param toFind
+     * @return
+     * @throws NullPointerException
+     */
+    public static int indexOf(String input, String toFind) throws NullPointerException {
+        // The input can't be null since that wouldn't make sense, so throw an exception if it is.
+        if (input == null) {
+            throw new NullPointerException("Input cannot be null");
+        }
+
+        // If toFind is empty or doesn't have any characters, just return -1.
+        if (toFind == null || toFind.length() == 0) {
+            return -1;
+        }
+
+        // If the input string doesn't have enough character to located the toFind string, then we
+        // know we won't be able to find it.
+        if (input.length() < toFind.length()) {
+            return -1;
+        }
+
+        // Loop through the input word to find starting characters that match.
+        for (var i = 0; i < input.length() - toFind.length() + 1; ++i) {
+            // If the character we're looking at in the input does match the starting character in
+            // toFind, then just continue on to the next character.
+            if (input.charAt(i) != toFind.charAt(0)) {
+                continue;
+            }
+
+            // If we've made it this far, then we found a viable starting letter. Let's assume that
+            // we've found a match and prove otherwise.
+            var matchFound = true;
+
+            // Loop through the input for the next number of characters equal to what we're trying
+            // to find.
+            for (int j = 1; j < toFind.length(); ++j) {
+                // If we find characters that don't match, then flag that we haven't found a match.
+                // Break out of the loop.
+                if (input.charAt(i + j) != toFind.charAt(j)) {
+                    matchFound = false;
+                    break;
+                }
+            }
+
+            // If we made it through the loop and didn't chance matchFound to false, then we have
+            // indeed found our match and can return the index of the starting letter.
+            if (matchFound) {
+                return i;
+            }
+        }
+
+        // If we've made it this far without finding a match, there's nothing else we can do.
+        return -1;
     }
 
 }

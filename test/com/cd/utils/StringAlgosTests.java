@@ -63,7 +63,7 @@ public class StringAlgosTests {
 
     @Test
     public void shuffleString_throwsOnNull() {
-        assertThrows("Excepted shuffleString to throw.", IllegalArgumentException.class,
+        assertThrows("Excepted shuffleString to throw.", NullPointerException.class,
                 () -> StringAlgos.shuffleString(null));
     }
 
@@ -74,8 +74,16 @@ public class StringAlgosTests {
 
     @Test
     public void reverseString_throwsOnNull() {
-        assertThrows("Excepted reverseString to throw.", IllegalArgumentException.class,
+        assertThrows("Excepted reverseString to throw.", NullPointerException.class,
                 () -> StringAlgos.reverseString(null));
+    }
+
+    @Test
+    public void indexOf_findsSubstring() {
+        assertEquals(3, StringAlgos.indexOf("paydirt", "dirt"));
+        assertEquals(0, StringAlgos.indexOf("test", "test"));
+        assertEquals(6, StringAlgos.indexOf("fuzzy Bunny", "Bun"));
+        assertEquals(11, StringAlgos.indexOf("don't bite tsetse", "tse"));
     }
 
     @Test
@@ -86,5 +94,20 @@ public class StringAlgosTests {
     @Test
     public void encodeString_encodesNull() {
         assertEquals(null, StringAlgos.encodeString(null));
+    }
+
+    @Test
+    public void indexOf_terminatesCorectly() {
+        assertEquals(-1, StringAlgos.indexOf("paydirt", "money"));
+        assertEquals(-1, StringAlgos.indexOf("short", "longer"));
+        assertEquals(-1, StringAlgos.indexOf("ABC", "abc"));
+        assertEquals(-1, StringAlgos.indexOf("ABC", null));
+        assertEquals(-1, StringAlgos.indexOf("ABC", ""));
+    }
+
+    @Test
+    public void indexOf_throwsOnNullInput() {
+        assertThrows("Excepted shuffleString to throw.", NullPointerException.class,
+                () -> StringAlgos.indexOf(null, "test"));
     }
 }
