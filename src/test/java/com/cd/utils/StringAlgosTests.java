@@ -26,6 +26,7 @@ public class StringAlgosTests {
         assumeFalse(StringAlgos.areEqual(null, "xyz"));
         assumeFalse(StringAlgos.areEqual("abc", null));
         assumeFalse(StringAlgos.areEqual("abc", "ABC"));
+        assumeFalse(StringAlgos.areEqual("first", "second"));
     }
 
     @Test
@@ -40,6 +41,12 @@ public class StringAlgosTests {
         assumeFalse(StringAlgos.containsUniqueCharacters("aa"));
         assumeFalse(StringAlgos.containsUniqueCharacters("abbc"));
         assumeFalse(StringAlgos.containsUniqueCharacters("aaac"));
+    }
+
+    @Test
+    public void containsUniqueCharacters_throwsOnNullArgumnts() {
+        assertThrows(NullPointerException.class, () -> StringAlgos.containsUniqueCharacters(null),
+                "Excepted containsUniqueCharacters to throw.");
     }
 
     @Test
