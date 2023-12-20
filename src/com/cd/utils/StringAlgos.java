@@ -18,6 +18,11 @@ public class StringAlgos {
             return false;
         }
 
+        // If both strings are null, then we consider them to be equal.
+        if (first == null && second == null) {
+            return true;
+        }
+
         // We now know that both strings aren't null. But if their length doesn't match, then we
         // know they are not equal.
         if (first.length() != second.length()) {
