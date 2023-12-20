@@ -272,7 +272,8 @@ public class StringAlgos {
             return -1;
         }
 
-        // Loop through the input word to find starting characters that match.
+        // Loop through the input word to find starting characters that match. Note the loop
+        // condition.
         for (var i = 0; i < input.length() - toFind.length() + 1; ++i) {
             // If the character we're looking at in the input does match the starting character in
             // toFind, then just continue on to the next character.
