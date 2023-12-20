@@ -1,5 +1,7 @@
 ## Code Differently Samples
 
+![Maven workflow](https://github.com/anthonydmays/code-differently-samples/actions/workflows/maven.yml/badge.svg)
+
 This repository contains code samples used for the Code Differently interview preparation series.
 
 ### Files to explore
