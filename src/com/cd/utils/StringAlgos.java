@@ -7,14 +7,16 @@ public class StringAlgos {
      * Determines if the provided input string contains only unique characters.
      * 
      * In order to do this, we need to:
+     * 
+     * <pre>
      * 1) Loop through each character of the word
      * 1.a) Check to see if we've already seen the character.
      * 1.a.1) If so, the return false.
      * 1.a.2) Otherwise, add it to the set
+     * </pre>
      * 
      * @param input The input string to test.
-     * @return True if the input string contains unique characters, and false
-     *         otherwise.
+     * @return True if the input string contains unique characters, and false otherwise.
      */
     public static Boolean containsUniqueCharacters(String input) throws IllegalArgumentException {
         // If the input is null, then throw an error.
@@ -40,8 +42,8 @@ public class StringAlgos {
             visited.add(character);
         }
 
-        // If we've made it through the string, then we can safely say there are no
-        // duplicate characters.
+        // If we've made it through the string, then we can safely say there are no duplicate
+        // characters.
         return true;
     }
 
@@ -51,14 +53,16 @@ public class StringAlgos {
      * ex: "aabaacccc" becomes "a2b1a2c4"
      * 
      * The process is as follows:
+     * 
+     * <pre>
      * 1) Move through each character in the string
-     * 1.a) Check to see if the current character matches the last character we've
-     * seen
-     * 1.a.1) If so, then update our counter
-     * 1.a.2) If not, then append the last character and its count to the result.
-     * Reset
-     * the counter and the last character to the current one.
-     * 2) Add the final character and its count to the result.
+     * 1.a) Check to see if the current character matches the last character we've seen.
+     * 1.a.1) If so, then update our counter.
+     * 1.a.2) If not, then append the last character and its count to the result. Reset 
+     *     the counter and the last character to the current one.
+     * 2) Add the final character and its count
+     * to the result.
+     * </pre>
      * 
      * @param input
      * @return
@@ -106,11 +110,14 @@ public class StringAlgos {
      * Returns the shuffled characters of the provided word.
      * 
      * Here's the approach:
+     * 
+     * <pre>
      * 1) Convert the string to a character array.
-     * 2) Iterate through each character in the array
+     * 2) Iterate through each character in the array. 
      * 2.a) Pick a random index between 0 and the array length.
      * 2.b) Swap the characters at the current index and the random one.
      * 3) Return a new string from the character array.
+     * </pre>
      * 
      * @param word
      * @return
