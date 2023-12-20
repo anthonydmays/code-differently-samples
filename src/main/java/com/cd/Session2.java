@@ -31,5 +31,9 @@ public class Session2 {
 
         System.out.println(String.format("Here's the encoded version of the string \"%s\": %s",
                 "aaabccddddd", StringAlgos.encodeString("aaabccddddd")));
+
+        System.out.println(String.format(
+                "Here's the first index of the string \"%s\" in \"%s\": %s", "Different",
+                "Code Differently", StringAlgos.indexOf("Code Differently", "Different")));
     }
 }
