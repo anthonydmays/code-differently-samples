@@ -55,12 +55,12 @@ public class StringAlgos {
      * 
      * @param input The input string to test.
      * @return True if the input string contains unique characters, and false otherwise.
-     * @throws NullPointerException
+     * @throws IllegalArgumentException
      */
-    public static Boolean containsUniqueCharacters(String input) throws NullPointerException {
+    public static Boolean containsUniqueCharacters(String input) throws IllegalArgumentException {
         // If the input is null, then throw an error.
         if (input == null) {
-            throw new NullPointerException("Input cannot be null.");
+            throw new IllegalArgumentException("Input cannot be null.");
         }
 
         // We want to use a set to keep track of characters we've already seen. A set can only
@@ -102,12 +102,12 @@ public class StringAlgos {
      * 
      * @param input The string to shuffle.
      * @return The shuffled string.
-     * @throws NullPointerException
+     * @throws IllegalArgumentException
      */
-    public static String shuffleString(String input) throws NullPointerException {
+    public static String shuffleString(String input) throws IllegalArgumentException {
         // Check yoself before you wreck yoself.
         if (input == null) {
-            throw new NullPointerException("Input cannot be null.");
+            throw new IllegalArgumentException("Input cannot be null.");
         }
 
         // Strings are immutable. Let's convert to a char array so we can move characters around.
@@ -148,12 +148,12 @@ public class StringAlgos {
      * 
      * @param input
      * @return
-     * @throws NullPointerException
+     * @throws IllegalArgumentException
      */
-    public static String reverseString(String input) throws NullPointerException {
+    public static String reverseString(String input) throws IllegalArgumentException {
         // Check yoself before you wreck yoself.
         if (input == null) {
-            throw new NullPointerException("Input cannot be null.");
+            throw new IllegalArgumentException("Input cannot be null.");
         }
 
         // Strings are immutable. Let's convert to a char array so we can move characters around.
@@ -253,12 +253,12 @@ public class StringAlgos {
      * @param input
      * @param toFind
      * @return
-     * @throws NullPointerException
+     * @throws IllegalArgumentException
      */
-    public static int indexOf(String input, String toFind) throws NullPointerException {
+    public static int indexOf(String input, String toFind) throws IllegalArgumentException {
         // The input can't be null since that wouldn't make sense, so throw an exception if it is.
         if (input == null) {
-            throw new NullPointerException("Input cannot be null");
+            throw new IllegalArgumentException("Input cannot be null");
         }
 
         // If toFind is empty or doesn't have any characters, just return -1.

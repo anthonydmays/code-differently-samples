@@ -45,7 +45,8 @@ public class StringAlgosTests {
 
     @Test
     public void containsUniqueCharacters_throwsOnNullArgumnts() {
-        assertThrows(NullPointerException.class, () -> StringAlgos.containsUniqueCharacters(null),
+        assertThrows(IllegalArgumentException.class,
+                () -> StringAlgos.containsUniqueCharacters(null),
                 "Excepted containsUniqueCharacters to throw.");
     }
 
@@ -69,7 +70,7 @@ public class StringAlgosTests {
 
     @Test
     public void shuffleString_throwsOnNull() {
-        assertThrows(NullPointerException.class, () -> StringAlgos.shuffleString(null),
+        assertThrows(IllegalArgumentException.class, () -> StringAlgos.shuffleString(null),
                 "Excepted shuffleString to throw.");
     }
 
@@ -80,7 +81,7 @@ public class StringAlgosTests {
 
     @Test
     public void reverseString_throwsOnNull() {
-        assertThrows(NullPointerException.class, () -> StringAlgos.reverseString(null),
+        assertThrows(IllegalArgumentException.class, () -> StringAlgos.reverseString(null),
                 "Excepted reverseString to throw.");
     }
 
@@ -113,7 +114,7 @@ public class StringAlgosTests {
 
     @Test
     public void indexOf_throwsOnNullInput() {
-        assertThrows(NullPointerException.class, () -> StringAlgos.indexOf(null, "test"),
+        assertThrows(IllegalArgumentException.class, () -> StringAlgos.indexOf(null, "test"),
                 "Excepted indexOf to throw.");
     }
 }
