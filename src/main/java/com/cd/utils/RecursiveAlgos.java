@@ -23,6 +23,25 @@ public class RecursiveAlgos {
     }
 
     /**
+     * Calculates the nth Fibonacci number using the faster iterative approach.
+     * 
+     * @param n The nth Fibonacci value to compute
+     * @return The value
+     */
+    public static int getNthFibonacciFaster(int n) {
+        var fibonacciSequence = new int[n + 1];
+
+        fibonacciSequence[0] = 0;
+        fibonacciSequence[1] = 1;
+
+        for (var i = 2; i < (n + 1); ++i) {
+            fibonacciSequence[i] = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
+        }
+
+        return fibonacciSequence[n];
+    }
+
+    /**
      * Finds the index of the provided value in the given array between the low and high indices.
      * 
      * @param array The array to search
