@@ -43,6 +43,9 @@ public class RecursiveAlgos {
 
     /**
      * Finds the index of the provided value in the given array between the low and high indices.
+     * Check out the simulator at
+     * https://yongdanielliang.github.io/animation/web/BinarySearchNew.html to better understand how
+     * this code works.
      * 
      * @param array The array to search
      * @param low The low index to start searching
