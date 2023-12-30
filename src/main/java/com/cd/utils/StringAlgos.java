@@ -2,6 +2,7 @@ package com.cd.utils;
 
 import java.util.HashSet;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class StringAlgos {
     /**
@@ -114,13 +115,11 @@ public class StringAlgos {
         // Strings are immutable. Let's convert to a char array so we can move characters around.
         var charArray = input.toCharArray();
 
-        // Create a random generator we can use for the shuffle.
-        var random = new Random();
-
         // Move through each character in the array.
         for (var i = 0; i < charArray.length; ++i) {
             // Pick a random index in the array.
-            int randomIndex = random.nextInt(charArray.length);
+            // Note: Could also have used <code>(int)(Math.random() * charArray.length)</code>.
+            int randomIndex = ThreadLocalRandom.current().nextInt(0, charArray.length);
 
             // Swap the characters at i and the random index.
             swapCharacters(charArray, i, randomIndex);
